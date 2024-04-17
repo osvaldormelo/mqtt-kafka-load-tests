@@ -34,7 +34,7 @@ public class ApiRouteBuilder extends RouteBuilder {
         ott.init();
 
         //from("paho-mqtt5:$Channel/$ID/$WireIdhost=tcp://myMqttBroker1:1883")
-        from("paho-mqtt5:eclipse-mosquitto?brokerUrl=tcp://eclipse-mosquitto:1883")
+        from("paho-mqtt5:mqtt-message-out/1/2?brokerUrl=tcp://ex-aao-hdls-svc:61616")
                 .log("Mensagem recebida: ${body}")
                 .log("Header: ${headers}")
                 .process(exchange -> {
